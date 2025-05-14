@@ -1,0 +1,8 @@
+name: sra_download
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - sra-tools
+  - snakemake>=8
+  - snakemake-executor-plugin-slurm
