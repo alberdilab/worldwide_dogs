@@ -1,7 +1,7 @@
 # Worldwide dogs metagenomics
 Repository containing the code for the metagenomic analysis of worldwide dogs and wolfs
 
-### Data retrieval
+## Data retrieval
 
 ### 1. Clone repository
 
@@ -39,7 +39,7 @@ snakemake --workflow-profile .
 conda deactivate
 ```
 
-### Genome-resolved metagenomics
+## Genome-resolved metagenomics
 
 ### 1. Get reference genome
 
