@@ -47,6 +47,7 @@ conda deactivate
 mkdir reference
 cd reference
 wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/011/100/685/GCF_011100685.1_UU_Cfam_GSD_1.0/GCF_011100685.1_UU_Cfam_GSD_1.0_genomic.fna.gz
+gunzip GCF_011100685.1_UU_Cfam_GSD_1.0_genomic.fna.gz
 cd ..
 ```
 
@@ -54,5 +55,5 @@ cd ..
 
 ```
 conda activate drakkar
-drakkar preprocessing -f input.tsv -m individual
+drakkar complete -f input.tsv -m individual
 ```
