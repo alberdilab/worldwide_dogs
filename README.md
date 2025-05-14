@@ -1,9 +1,9 @@
 # Worldwide dogs metagenomics
 Repository containing the code for the metagenomic analysis of worldwide dogs and wolfs
 
-## Data retrieval
+## 1 - Environment preparation
 
-### 1. Clone repository
+### 1.1 - Clone repository
 
 Clone this repository to your local environment or server using git.
 
@@ -12,7 +12,7 @@ git clone https://github.com/alberdilab/worldwide_dogs.git
 cd worldwide_dogs
 ```
 
-### 2. Create environment
+### 1.2 - Create environment
 
 Create conda environment containing all required dependencies and activate it
 
@@ -21,7 +21,18 @@ conda env create -f environment.yml
 conda activate sra_download
 ```
 
-### 3. Open screen session
+## 2 - Data search
+
+### 2.1 - Find run accessions
+
+```
+esearch -db sra -query PRJNA1082665 | efetch -format xml | xtract -pattern EXPERIMENT_PACKAGE -element RUN_SET/RUN@accession SAMPLE@alias STUDY/REF@alias -tab "\t" -sep "\t"
+
+```
+
+## 3 - Data retrieval
+
+### 3.1 - Open screen session
 
 Ideally the snakemake command should be executed within a screen session
 
@@ -29,7 +40,7 @@ Ideally the snakemake command should be executed within a screen session
 screen -S data_download
 ```
 
-### 4. Run snakemake
+### 3.2 - Run snakemake
 
 Run snakemake command to execute the data download
 
@@ -39,9 +50,9 @@ snakemake --workflow-profile .
 conda deactivate
 ```
 
-## Genome-resolved metagenomics
+## 4 - Genome-resolved metagenomics
 
-### 1. Get reference genome
+### 4.1 - Get reference genome
 
 ```
 mkdir reference
@@ -51,7 +62,7 @@ gunzip GCF_011100685.1_UU_Cfam_GSD_1.0_genomic.fna.gz
 cd ..
 ```
 
-### 2. Run genome-resolved metagenomics pipeline
+### 4.2 - Run genome-resolved metagenomics pipeline
 
 ```
 conda activate drakkar

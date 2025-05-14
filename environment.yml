@@ -6,3 +6,4 @@ dependencies:
   - sra-tools
   - snakemake>=8
   - snakemake-executor-plugin-slurm
+  - entrez-direct
